@@ -1,0 +1,29 @@
+{
+  "name": "passport-azure-oauth",
+  "description": "Azure OAuth2 strategy für Passport and node.js",
+  "version": "0.0.1",
+  "directories": {
+    "lib": "./lib"
+  },
+  "main": "./lib/passport-azure-oauth",
+  "author": {
+    "name": "Thomas Herbst",
+    "email": "thomas.herbst@queport.com"
+  },
+  "dependencies": {
+    "pkginfo": "0.2.x",
+    "passport-oauth": "0.1.x",
+    "oauth": "0.9.x",
+    "jwt-simple": "0.1.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/QuePort/passport-azure-oauth.git"
+  },
+  "engines": { "node": ">= 0.4.0" },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT" 
+  } ],
+  "keywords": ["passport", "oauth", "oauth2", "auth", "authn", "authentication", "azure", "exchange"]
+}
