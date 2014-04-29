@@ -13,6 +13,7 @@
   "dependencies": {
     "pkginfo": "0.2.x",
     "passport-oauth": "0.1.x",
+		"passport-strategy" : "1.0.0",
     "oauth": "0.9.x",
     "jwt-simple": "0.1.x"
   },
