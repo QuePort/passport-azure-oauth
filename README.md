@@ -23,7 +23,12 @@ accepts these credentials and calls `done` providing a user, as well as
     	clientSecret: AzureOAuth_ClientSecret,
 		tenantId 	: AzureOAuth_AppTenantId,
 		resource 	: AzureOAuth_AuthResource,
-		redirectURL : AzureOAuth_RedirectURL
+		redirectURL : AzureOAuth_RedirectURL,
+		proxy : {
+			host : 'myProxyHost',
+			port : 'myProxyPort',
+			protocol : 'https' // http / https
+		}
       },
       function(accessToken, refreshToken, profile, done) {
       	return done(err, user);
@@ -46,6 +51,11 @@ E.g
 		tenantId 	: AzureOAuth_AppTenantId,
 		resource 	: AzureOAuth_AuthResource,
 		redirectURL : AzureOAuth_RedirectURL,
+		proxy : {
+			host : 'myProxyHost',
+			port : 'myProxyPort',
+			protocol : 'https' // http / https
+		},
 		myParameter : 'Im a parameter'
 
     ));
@@ -54,6 +64,8 @@ E.g
 The callback url looks like <br>
 	
 	"redirectURL + '?redirectUrl=' + redirectUrl + "&" + myParameter="Im a parameter"
+
+* The proxy settings passed through the oauth2 module, wich handles the authorization requests.
 
 #### Authenticate Requests
 
