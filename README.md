@@ -16,13 +16,14 @@ By plugging into Passport, Azure / Office 365 authentication can be easily and u
 The Azure authentication strategy authenticates users using a Azure / Microsoft Office 365
 account using OAuth 2.0.  The strategy requires a `verify` callback, which
 accepts these credentials and calls `done` providing a user, as well as
-`options` specifying a app ID, app secret, and callback URL.
+`options` specifying a client ID, client secret, tenant id, resource and redirect URL.
 
     passport.use(new AzureOAuthStrategy({
         clientId	: AzureOAuth_ClientId,
     	clientSecret: AzureOAuth_ClientSecret,
 		tenantId 	: AzureOAuth_AppTenantId,
-		resource 	: AzureOAuth_AuthResource
+		resource 	: AzureOAuth_AuthResource,
+		redirectURL : AzureOAuth_RedirectURL
       },
       function(accessToken, refreshToken, profile, done) {
       	return done(err, user);
@@ -34,7 +35,25 @@ accepts these credentials and calls `done` providing a user, as well as
 * tenantId : Open Azure Online, navigate to the application, click on "VIEW ENDPOINTS", copy the GUID after the host url.
 * resource : Url to the Azure / Office 365 resource your app wants to access.
 	* e.g.: "https://outlook.office365.com/" to access Office 365 Mail Api
-* callbackURL : The redirect url after the authentication.
+* redirectURL : The redirect url after the authentication. </br>
+You can pass additional parameters to your "passport use", to work with them in your callback action.
+All parameters given in the new AzureOAuthStrategy({ }) will be passed to your redirectURL.
+E.g 
+	```javascript  
+
+        clientId	: AzureOAuth_ClientId,
+    	clientSecret: AzureOAuth_ClientSecret,
+		tenantId 	: AzureOAuth_AppTenantId,
+		resource 	: AzureOAuth_AuthResource,
+		redirectURL : AzureOAuth_RedirectURL,
+		myParameter : 'Im a parameter'
+
+    ));
+	```  
+
+The callback url looks like <br>
+	
+	"redirectURL + '?redirectUrl=' + redirectUrl + "&" + myParameter="Im a parameter"
 
 #### Authenticate Requests
 
