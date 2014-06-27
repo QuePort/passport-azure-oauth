@@ -69,21 +69,21 @@ The callback url looks like <br>
 
 #### Authenticate Requests
 
-Use `passport.authenticate()`, specifying the `'azureOAuth'` strategy, to
+Use `passport.authenticate()`, specifying the `'azureoauth'` strategy, to
 authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
     app.get('/auth/azureOAuth',
-      passport.authenticate('azureOAuth'),
+      passport.authenticate('azureoauth'),
       function(req, res){
         // The request will be redirected to SharePoint for authentication, so
         // this function will not be called.
       });
 
     app.get('/auth/azureOAuth/callback', 
-      passport.authenticate('azureOAuth', { 
+      passport.authenticate('azureoauth', { 
 		failureRedirect: '/login',
 		refreshToken: azureOAuth_RefreshToken 
 	  }),
