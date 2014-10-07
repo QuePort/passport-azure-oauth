@@ -40,14 +40,23 @@ accepts these credentials and calls `done` providing a user, as well as
 * tenantId : Open Azure Online, navigate to the application, click on "VIEW ENDPOINTS", copy the GUID after the host url.
 * resource : Url to the Azure / Office 365 resource your app wants to access.
 	* e.g.: "https://outlook.office365.com/" to access Office 365 Mail Api
-* redirectURL : The redirect url after the authentication. </br>
-You can pass additional parameters to your "passport use", to work with them in your callback action.
-All parameters given in the new AzureOAuthStrategy({ }) will be passed to your redirectURL.
-E.g 
-	```javascript  
+* proxy : The proxy settings passed through the oauth2 module, wich handles the authorization requests.
+* redirectURL :  </br>
+The redirect URL is an optional parameter to pass additional parameters to your "passport use".
+If you don't need additional parameters don't pass this parameter to the AzureOauthStrategy configuration.</br>
+If you want to use additional parameters with the callback URL you have to verify that : </br>
+	* the redirect URL is the same url as you configured in the Azure-AD configuration
+	* you pass the same parameters to the origin request and to the callback request.
+Azure-OAuth creates a dynamic redirect URL with the given parameters and provides it to Azure.
+Azure throws an "invalid grant" error if the redirect URL of the orgin request and the callback request redirect URL are different.
 
-        clientId	: AzureOAuth_ClientId,
-    	clientSecret: AzureOAuth_ClientSecret,
+
+	All parameters given in the new AzureOAuthStrategy({ }) will be passed to your redirectURL.
+	E.g 
+	  
+
+		clientId	: AzureOAuth_ClientId,
+		clientSecret: AzureOAuth_ClientSecret,
 		tenantId 	: AzureOAuth_AppTenantId,
 		resource 	: AzureOAuth_AuthResource,
 		redirectURL : AzureOAuth_RedirectURL,
@@ -58,14 +67,10 @@ E.g
 		},
 		myParameter : 'Im a parameter'
 
-    ));
-	```  
-
-The callback url looks like <br>
+	The callback url looks like <br>
 	
-	"redirectURL + '?redirectUrl=' + redirectUrl + "&" + myParameter="Im a parameter"
+		"redirectURL + '?redirectUrl=' + redirectUrl + "&" + myParameter="Im a parameter"
 
-* The proxy settings passed through the oauth2 module, wich handles the authorization requests.
 
 #### Authenticate Requests
 
@@ -76,7 +81,9 @@ For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
     app.get('/auth/azureOAuth',
-      passport.authenticate('azureOAuth'),
+      passport.authenticate('azureOAuth', { 
+		failureRedirect: '/login'
+	  }),
       function(req, res){
         // The request will be redirected to SharePoint for authentication, so
         // this function will not be called.
@@ -84,8 +91,8 @@ application:
 
     app.get('/auth/azureOAuth/callback', 
       passport.authenticate('azureOAuth', { 
-		failureRedirect: '/login',
-		refreshToken: azureOAuth_RefreshToken 
+		failureRedirect: '/login'
+		// refreshToken: azureOAuth_RefreshToken 
 	  }),
       function(req, res) {
         // Successful authentication, redirect home.
