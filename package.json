@@ -11,20 +11,59 @@
     "email": "thomas.herbst@queport.com"
   },
   "dependencies": {
-    "pkginfo": "0.2.x",
-    "passport-oauth": "0.1.x",
-		"passport-strategy" : "1.0.0",
+    "async": "^1.4.0",
+    "jwt-simple": "0.1.x",
     "oauth": "0.9.x",
-    "jwt-simple": "0.1.x"
+    "passport-oauth": "0.1.x",
+    "passport-strategy": "1.0.0",
+    "pkginfo": "0.2.x"
   },
   "repository": {
     "type": "git",
     "url": "http://github.com/QuePort/passport-azure-oauth.git"
   },
-  "engines": { "node": ">= 0.4.0" },
-  "licenses": [ {
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/MIT" 
-  } ],
-  "keywords": ["passport", "oauth", "oauth2", "auth", "authn", "authentication", "azure", "exchange"]
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "keywords": [
+    "passport",
+    "oauth",
+    "oauth2",
+    "auth",
+    "authn",
+    "authentication",
+    "azure",
+    "exchange"
+  ],
+  "gitHead": "3131d94eb43e033c389047ae84b8593613eca30a",
+  "bugs": {
+    "url": "https://github.com/QuePort/passport-azure-oauth/issues"
+  },
+  "homepage": "https://github.com/QuePort/passport-azure-oauth",
+  "_id": "passport-azure-oauth@0.0.6",
+  "scripts": {},
+  "_shasum": "c07a82e8ceb09805bb96e2891e10d15402d1d42c",
+  "_from": "passport-azure-oauth@0.0.6",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "tschuck",
+    "email": "tobias.winkler@outlook.de"
+  },
+  "maintainers": [
+    {
+      "name": "tschuck",
+      "email": "tobias.winkler@outlook.de"
+    }
+  ],
+  "dist": {
+    "shasum": "c07a82e8ceb09805bb96e2891e10d15402d1d42c",
+    "tarball": "http://npm.queport.com/passport-azure-oauth/-/passport-azure-oauth-0.0.6.tgz"
+  },
+  "_resolved": "http://npm.queport.com/passport-azure-oauth/-/passport-azure-oauth-0.0.6.tgz"
 }

@@ -71,6 +71,42 @@ Azure throws an "invalid grant" error if the redirect URL of the orgin request a
 	
 		"redirectURL + '?redirectUrl=' + redirectUrl + "&" + myParameter="Im a parameter"
 
+#### Get All available Endpoints for the User
+
+When your app grants multiple permissions for different API's, you can leave the "resource" parameter empty. When its empty, the [Office 365 Discovery Service](https://msdn.microsoft.com/en-us/office/office365/api/discovery-service-rest-operations) will be invoked to get all available endpoints with accesstokens for the authenticated user. 
+
+After a successful authentication, the user object contains a additional object called "endpoints":
+
+{
+  "username": "demo@xyz.de",
+  "displayname": "Demo User",
+  "endpoints": {
+    "RootSite@O365_SHAREPOINT": {
+      "accessToken": "eyJ0eXA...myzA",
+      "serviceName": "Office 365 SharePoint",
+      "serviceEndpointUri": "https://XYZ.sharepoint.com/_api"
+    },
+    "MyFiles@O365_SHAREPOINT": {
+      "accessToken": "eyJ0eXA...myzA",
+      "serviceName": "Office 365 SharePoint",
+      "serviceEndpointUri": "https://XYZ-my.sharepoint.com/_api/v1.0/me"
+    },
+    "Directory@AZURE": {
+      "accessToken": "eyJ0eXA...myzA",
+      "serviceName": "Microsoft Azure",
+      "serviceEndpointUri": "https://graph.windows.net/XYZ.onmicrosoft.com/"
+    }
+  },
+  "accessToken": "eyJ0eXA...myzA",
+  "accessTokenExpirationTime": 1438931641638,
+  "refreshToken": "eyJ0eXA...myzA",
+  "refreshTokenExpirationTime": 1454832805638,
+}
+
+The normal "accessToken" and "refreshToken" are mapped to the resourceId "https://api.office.com/discovery/", so please use the accessTokens from the "endpoints" object. 
+
+All Tokens expire in 1 hour, so when the refresh is called all endpoint tokens are refreshed too!
+
 
 #### Authenticate Requests
 
