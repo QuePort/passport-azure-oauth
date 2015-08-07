@@ -76,7 +76,7 @@ Azure throws an "invalid grant" error if the redirect URL of the orgin request a
 When your app grants multiple permissions for different API's, you can leave the "resource" parameter empty. When its empty, the [Office 365 Discovery Service](https://msdn.microsoft.com/en-us/office/office365/api/discovery-service-rest-operations) will be invoked to get all available endpoints with accesstokens for the authenticated user. 
 
 After a successful authentication, the user object contains a additional object called "endpoints":
-
+```json
 {
   "username": "demo@xyz.de",
   "displayname": "Demo User",
@@ -102,7 +102,7 @@ After a successful authentication, the user object contains a additional object 
   "refreshToken": "eyJ0eXA...myzA",
   "refreshTokenExpirationTime": 1454832805638,
 }
-
+```
 The normal "accessToken" and "refreshToken" are mapped to the resourceId "https://api.office.com/discovery/", so please use the accessTokens from the "endpoints" object. 
 
 All Tokens expire in 1 hour, so when the refresh is called all endpoint tokens are refreshed too!
