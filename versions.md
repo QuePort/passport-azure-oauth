@@ -1,5 +1,8 @@
 # passport-azure-oauth Versions
 
+## Version 0.0.7
+- Implement autodetection of available endpoints  for granted app permissions.
+
 ## Version 0.0.6
 - fixed invalid grant error
 - fixed always needed redirect url issue

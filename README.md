@@ -19,8 +19,8 @@ accepts these credentials and calls `done` providing a user, as well as
 `options` specifying a client ID, client secret, tenant id, resource and redirect URL.
 
     passport.use(new AzureOAuthStrategy({
-        clientId	: AzureOAuth_ClientId,
-    	clientSecret: AzureOAuth_ClientSecret,
+    clientId	: AzureOAuth_ClientId,
+  	clientSecret: AzureOAuth_ClientSecret,
 		tenantId 	: AzureOAuth_AppTenantId,
 		resource 	: AzureOAuth_AuthResource,
 		redirectURL : AzureOAuth_RedirectURL,
@@ -37,7 +37,7 @@ accepts these credentials and calls `done` providing a user, as well as
 
 * clientId : Id of the registered azure online application.
 * clientSecret : Password of the registered azure online application.
-* tenantId : Open Azure Online, navigate to the application, click on "VIEW ENDPOINTS", copy the GUID after the host url.
+* tenantId : Open Azure Online, navigate to the application, click on "VIEW ENDPOINTS", copy the GUID after the host url. You can also use the value "common" to auto detect your tenant id.
 * resource : Url to the Azure / Office 365 resource your app wants to access.
 	* e.g.: "https://outlook.office365.com/" to access Office 365 Mail Api
 * proxy : The proxy settings passed through the oauth2 module, wich handles the authorization requests.

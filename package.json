@@ -1,7 +1,7 @@
 {
   "name": "passport-azure-oauth",
   "description": "Azure OAuth2 strategy for Passport and node.js",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "directories": {
     "lib": "./lib"
   },
@@ -46,10 +46,10 @@
     "url": "https://github.com/QuePort/passport-azure-oauth/issues"
   },
   "homepage": "https://github.com/QuePort/passport-azure-oauth",
-  "_id": "passport-azure-oauth@0.0.6",
+  "_id": "passport-azure-oauth@0.0.7",
   "scripts": {},
   "_shasum": "c07a82e8ceb09805bb96e2891e10d15402d1d42c",
-  "_from": "passport-azure-oauth@0.0.6",
+  "_from": "passport-azure-oauth@0.0.7",
   "_npmVersion": "1.4.28",
   "_npmUser": {
     "name": "tschuck",
@@ -63,7 +63,7 @@
   ],
   "dist": {
     "shasum": "c07a82e8ceb09805bb96e2891e10d15402d1d42c",
-    "tarball": "http://npm.queport.com/passport-azure-oauth/-/passport-azure-oauth-0.0.6.tgz"
+    "tarball": "http://npm.queport.com/passport-azure-oauth/-/passport-azure-oauth-0.0.7.tgz"
   },
-  "_resolved": "http://npm.queport.com/passport-azure-oauth/-/passport-azure-oauth-0.0.6.tgz"
+  "_resolved": "http://npm.queport.com/passport-azure-oauth/-/passport-azure-oauth-0.0.7.tgz"
 }
