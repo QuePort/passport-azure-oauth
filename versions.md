@@ -1,5 +1,8 @@
 # passport-azure-oauth Versions
 
+## Version 0.0.8
+- Update azure login url to prevent a redirect from login.windows.net to login.microsoftonline.com
+
 ## Version 0.0.7
 - Implement autodetection of available endpoints  for granted app permissions.
 
