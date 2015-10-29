@@ -24,6 +24,7 @@ accepts these credentials and calls `done` providing a user, as well as
 		tenantId 	: AzureOAuth_AppTenantId,
 		resource 	: AzureOAuth_AuthResource,
 		redirectURL : AzureOAuth_RedirectURL,
+    user : : AzureOAuth_User,
 		proxy : {
 			host : 'myProxyHost',
 			port : 'myProxyPort',
@@ -41,6 +42,7 @@ accepts these credentials and calls `done` providing a user, as well as
 * resource : Url to the Azure / Office 365 resource your app wants to access.
 	* e.g.: "https://outlook.office365.com/" to access Office 365 Mail Api
 * proxy : The proxy settings passed through the oauth2 module, wich handles the authorization requests.
+* user : Using this parameter will automatically fill the user input provided value into the login page.
 * redirectURL :  </br>
 The redirect URL is an optional parameter to pass additional parameters to your "passport use".
 If you don't need additional parameters don't pass this parameter to the AzureOauthStrategy configuration.</br>
@@ -60,6 +62,7 @@ Azure throws an "invalid grant" error if the redirect URL of the orgin request a
 		tenantId 	: AzureOAuth_AppTenantId,
 		resource 	: AzureOAuth_AuthResource,
 		redirectURL : AzureOAuth_RedirectURL,
+    user : : AzureOAuth_User,
 		proxy : {
 			host : 'myProxyHost',
 			port : 'myProxyPort',
