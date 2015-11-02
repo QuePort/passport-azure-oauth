@@ -1,5 +1,8 @@
 # passport-azure-oauth Versions
 
+## Version 0.1.0
+- Handle 'you have no access to any service' error
+
 ## Version 0.0.9
 - Add "user" parameter to automatically fill the user input in the login page 
 
