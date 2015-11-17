@@ -1,5 +1,8 @@
 # passport-azure-oauth Versions
 
+## Version 0.1.2
+- Remove check if a user is permitted on a special application; User from foreign tenants has no rights on all apps ==> they would never has permissions
+
 ## Version 0.1.1
 - Add a check if a user is permitted on a special application; if not, return a noAccess Error (also return the profile, if you want to go further with the current authenticated user)
 
