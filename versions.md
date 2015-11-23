@@ -1,5 +1,8 @@
 # passport-azure-oauth Versions
 
+## Version 0.1.3
+- Remove permission check
+
 ## Version 0.1.2
 - Remove check if a user is permitted on a special application; User from foreign tenants has no rights on all apps ==> they would never has permissions
 
