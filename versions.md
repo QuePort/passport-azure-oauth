@@ -1,5 +1,8 @@
 # passport-azure-oauth Versions
 
+## Version 0.1.4
+- Remove authorization params for url => fix multiple redirect url
+
 ## Version 0.1.3
 - Remove permission check
 
