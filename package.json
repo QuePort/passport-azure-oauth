@@ -1,7 +1,7 @@
 {
   "name": "passport-azure-oauth",
   "description": "Azure OAuth2 strategy for Passport and node.js",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "directories": {
     "lib": "./lib"
   },

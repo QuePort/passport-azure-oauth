@@ -1,5 +1,6 @@
 # passport-azure-oauth Versions
 ## new Version
+## Version 0.1.5
 - fixed Azure login -> username for auto fill of input field is now accessed by getParam 'login_hint'
 
 ## Version 0.1.4
