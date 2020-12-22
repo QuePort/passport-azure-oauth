@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "async": "^1.4.0",
-    "jwt-simple": "0.1.x",
     "oauth": "0.9.x",
     "passport-oauth": "0.1.x",
     "passport-strategy": "1.0.0",
